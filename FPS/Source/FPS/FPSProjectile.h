@@ -16,8 +16,22 @@ class AFPSProjectile : public AActor
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	class UProjectileMovementComponent* ProjectileMovement;
 
+	UPROPERTY(EditAnywhere, Category = "FX")
+		class UParticleSystem* ExplosionParticles;
+
+	UPROPERTY(EditAnywhere, Category = "FX")
+		class USoundCue* ExplosionSound;
+
+	UPROPERTY(EditAnywhere, Category = "Projective")
+		float Radius = 500.0f;
+
 public:
 	AFPSProjectile();
+
+	virtual void BeginPlay() override;
+
+	UFUNCTION()
+		void OnDetonate();
 
 	/** called when projectile hits something */
 	UFUNCTION()

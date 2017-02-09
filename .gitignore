@@ -60,3 +60,11 @@ Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+FPS/Binaries/
+
+FPS/Intermediate/
+
+FPS/Saved/
+
+FPS/FPS\.VC\.db
